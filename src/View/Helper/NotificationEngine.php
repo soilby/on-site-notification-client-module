@@ -12,4 +12,17 @@ use Zend\View\Helper\AbstractHelper;
 
 class NotificationEngine extends AbstractHelper {
 
+
+    public function __invoke($authorURI)  {
+
+        $viewModel = new ViewModel([
+            'entityURI' => $entityURI,
+            'authorURI' => $authorURI,
+            'enableSubscription' => $enableSubscription
+        ]);
+
+        $viewModel->setTemplate('comment/widget/widget');
+
+        return $this->view->render($viewModel);
+    }
 } 
