@@ -25,7 +25,7 @@ return array(
     ),
     'front_end_config' => [
         'on_site_notification' => [
-            'endpoint' => 'http://semantic.talaka.by.local/notification/on-site/pending/'
+            'endpoint' => 'http://semantic.talaka.by.local/notification/on-site/'
         ]
     ]
 );

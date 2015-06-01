@@ -14,8 +14,9 @@ use Zend\ServiceManager\ServiceLocatorInterface;
 class NotificationEngineFactory implements FactoryInterface {
 
     public function createService(ServiceLocatorInterface $serviceLocator)  {
-        $helper = new NotificationEngine();
+        $frontEndConfigHelper = $serviceLocator->get('talakaFrontEndConfig');
 
+        $helper = new NotificationEngine($frontEndConfigHelper);
 
         return $helper;
     }

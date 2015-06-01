@@ -1,1 +1,15 @@
-NOTIFYYYY
+<div ng-controller="OnSiteNotificationEngine" agent-uri="{{ authorURI }}">
+
+    <div class="popup base-popup" ng-cloak ng-show="showNotification" style="z-index: 999;">
+        {#<div class="close" ng-click="toggleShowPopup()"></div>#}
+        <div class="body">
+            [[ message ]]
+        </div>
+        <div class="toolbar">
+            <a href="" style="margin-right: 45px;" ng-click="ok()" class="button grey">
+                [[ action ]]
+            </a>
+        </div>
+    </div>
+
+</div>

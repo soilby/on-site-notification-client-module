@@ -17,7 +17,7 @@ class Module implements
     public function getConfig()
     {
         $config = [];
-        foreach (glob(__DIR__ . '/../../config/*.config.php') as $file) {
+        foreach (glob(__DIR__ . '/../config/*.config.php') as $file) {
             /** @noinspection PhpIncludeInspection */
             $config = array_merge($config, include $file);
         }
@@ -25,10 +25,6 @@ class Module implements
         return $config;
     }
 
-    public function getServiceConfig()
-    {
-        return [];
-    }
 
 
     /**
