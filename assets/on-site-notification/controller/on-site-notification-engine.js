@@ -8,6 +8,9 @@ var app = angular.module('app');
 app.controller('OnSiteNotificationEngine', function ($scope, $injector, $http, $rootScope, configService, $location, AppConfig, $attrs, NotificationShowSupervisor) {
 
     $.extend($scope, {
+        cancel: function()  {
+            $scope.closePopup();
+        },
         ok: function()  {
             $scope.closePopup().then(function() {
                 if ($scope.relatedLink) {
@@ -52,10 +55,10 @@ app.controller('OnSiteNotificationEngine', function ($scope, $injector, $http, $
                         continue;
                     }
 
-
                     $scope.$apply(function () {
                         $scope.notification = notification;
-                        $scope.action = notification.action;
+                        $scope.action = _(notification.action);
+                        console.log('$scope.action_be', _($scope.action))
                         $scope.message = notification.message;
                         $scope.showNotification = true;
                         $scope.relatedLink = notification.related_link;

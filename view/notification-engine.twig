@@ -1,7 +1,7 @@
 <div ng-controller="OnSiteNotificationEngine" agent-uri="{{ authorURI }}">
 
     <div class="popup base-popup" ng-cloak ng-show="showNotification" style="z-index: 999;">
-        {#<div class="close" ng-click="toggleShowPopup()"></div>#}
+        <div class="close" ng-click="cancel()"></div>
         <div class="body">
             [[ message ]]
         </div>
