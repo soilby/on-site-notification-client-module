@@ -5,7 +5,9 @@
 var app = angular.module('app');
 
 
-app.controller('OnSiteNotificationEngine', function ($scope, $injector, $http, $rootScope, configService, $location, AppConfig, $attrs, NotificationShowSupervisor) {
+app.controller('OnSiteNotificationEngine', [
+    '$scope', '$injector', '$http', '$rootScope', 'configService', '$location', 'AppConfig', '$attrs', 'NotificationShowSupervisor',
+    function ($scope, $injector, $http, $rootScope, configService, $location, AppConfig, $attrs, NotificationShowSupervisor) {
 
     $.extend($scope, {
         cancel: function()  {
@@ -86,9 +88,9 @@ app.controller('OnSiteNotificationEngine', function ($scope, $injector, $http, $
 
 
 
-});
+}]);
 
-app.factory('NotificationShowSupervisor', function($http, AppConfig) {
+app.factory('NotificationShowSupervisor', ['$http', 'AppConfig', function($http, AppConfig) {
     var config = AppConfig.on_site_notification;
 
     var endpoint = config.endpoint;
@@ -157,4 +159,4 @@ app.factory('NotificationShowSupervisor', function($http, AppConfig) {
 
 
     }
-});
+}]);
