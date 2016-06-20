@@ -43,7 +43,7 @@ app.controller('OnSiteNotificationEngine', [
 
     $.get(url)
         .success(function(response)  {
-            console.log('succ', response);
+            console.info('on-site-notification loaded', response);
             if (response && Array.isArray(response) && response.length > 0) {
 
                 for (var i in response) {

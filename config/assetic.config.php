@@ -13,6 +13,7 @@ return array(
                         'options' => [
                             'output' => 'on-site-notification.js'
                         ],
+                        'filters' => array('?EnliteNgminFilter', '?EnliteUglifyFilter')
                     ]
                 ),
             ),
